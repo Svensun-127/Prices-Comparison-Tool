@@ -275,37 +275,40 @@
 
         <div class="sites-grid">
             <input type="checkbox" id="jd" class="site-checkbox" checked>
-            <label for="jd" class="site-label">京东</label>
+            <label for="jd" class="site-label" data-en="JD.com" data-zh="京东">京东</label>
 
-            <input type="checkbox" id="taobao" class="site-checkbox" checked>
-            <label for="taobao" class="site-label">淘宝</label>
+            <input type="checkbox" id="suning" class="site-checkbox" checked>
+            <label for="suning" class="site-label" data-en="Suning" data-zh="苏宁易购">苏宁易购</label>
 
             <input type="checkbox" id="dangdang" class="site-checkbox" checked>
-            <label for="dangdang" class="site-label">当当网</label>
-
-            <input type="checkbox" id="pinduoduo" class="site-checkbox" checked>
-            <label for="pinduoduo" class="site-label">拼多多</label>
-
-            <input type="checkbox" id="xianyu" class="site-checkbox" checked>
-            <label for="xianyu" class="site-label">咸鱼</label>
+            <label for="dangdang" class="site-label" data-en="Dangdang" data-zh="当当网">当当网</label>
 
             <input type="checkbox" id="amazon" class="site-checkbox" checked>
-            <label for="amazon" class="site-label">Amazon</label>
+            <label for="amazon" class="site-label" data-en="Amazon" data-zh="亚马逊">Amazon</label>
+
+            <input type="checkbox" id="aliexpress" class="site-checkbox" checked>
+            <label for="aliexpress" class="site-label" data-en="AliExpress" data-zh="速卖通">AliExpress</label>
 
             <input type="checkbox" id="ebay" class="site-checkbox" checked>
-            <label for="ebay" class="site-label">eBay</label>
+            <label for="ebay" class="site-label" data-en="eBay" data-zh="易贝">eBay</label>
 
             <input type="checkbox" id="walmart" class="site-checkbox" checked>
-            <label for="walmart" class="site-label">Walmart</label>
+            <label for="walmart" class="site-label" data-en="Walmart" data-zh="沃尔玛">Walmart</label>
+
+            <input type="checkbox" id="temu" class="site-checkbox" checked>
+            <label for="temu" class="site-label" data-en="Temu" data-zh="Temu">Temu</label>
 
             <input type="checkbox" id="etsy" class="site-checkbox" checked>
-            <label for="etsy" class="site-label">Etsy</label>
+            <label for="etsy" class="site-label" data-en="Etsy" data-zh="Etsy">Etsy</label>
 
             <input type="checkbox" id="costco" class="site-checkbox" checked>
-            <label for="costco" class="site-label">Costco</label>
+            <label for="costco" class="site-label" data-en="Costco" data-zh="好市多">Costco</label>
+
+            <input type="checkbox" id="samsclub" class="site-checkbox" checked>
+            <label for="samsclub" class="site-label" data-en="Sam's Club" data-zh="山姆会员店">Sam's Club</label>
 
             <input type="checkbox" id="target" class="site-checkbox" checked>
-            <label for="target" class="site-label">Target</label>
+            <label for="target" class="site-label" data-en="Target" data-zh="塔吉特">Target</label>
         </div>
 
         <div class="controls">
@@ -367,6 +370,9 @@
                 } else if (elem.classList.contains('title-text')) {
                     // Only update text content for title, preserving the SVG
                     elem.textContent = text;
+                } else if (elem.classList.contains('site-label')) {
+                    // Update site labels
+                    elem.textContent = text;
                 } else {
                     elem.textContent = text;
                 }
@@ -375,15 +381,16 @@
 
         const searchUrls = {
             jd: 'https://search.jd.com/Search?keyword=',
-            taobao: 'https://s.taobao.com/search?q=',
+            suning: 'https://search.suning.com/',
             dangdang: 'http://search.dangdang.com/?key=',
-            pinduoduo: 'https://mobile.yangkeduo.com/search_result.html?search_key=',
-            xianyu: 'https://s.2.taobao.com/list/list.htm?q=',
             amazon: 'https://www.amazon.com/s?k=',
+            aliexpress: 'https://www.aliexpress.com/w/wholesale-',
             ebay: 'https://www.ebay.com/sch/i.html?_nkw=',
             walmart: 'https://www.walmart.com/search?q=',
+            temu: 'https://www.temu.com/search_result.html?search_key=',
             etsy: 'https://www.etsy.com/search?q=',
             costco: 'https://www.costco.com/CatalogSearch?keyword=',
+            samsclub: 'https://www.samsclub.com/s/',
             target: 'https://www.target.com/s?searchTerm='
         };
 
